@@ -3,6 +3,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidMultiplatformLibrary)
+    alias(libs.plugins.googleDevtoolsKsp)
+    alias(libs.plugins.androidxRoom)
     alias(libs.plugins.androidLint)
     alias(libs.plugins.mavenPublish)
 }
@@ -14,7 +16,6 @@ kotlin {
     }
 
     listOf(
-        iosX64(),
         iosArm64(),
         iosSimulatorArm64(),
     ).forEach { iosTarget ->
@@ -28,7 +29,7 @@ kotlin {
     // which platforms this KMP module supports.
     // See: https://kotlinlang.org/docs/multiplatform-discover-project.html#targets
     android {
-        namespace = "io.github.samiuzhong.syncox.core"
+        namespace = "io.github.samiuzhong.syncox"
         compileSdk =
             libs.versions.android.compileSdk
                 .get()
@@ -60,6 +61,8 @@ kotlin {
             dependencies {
                 implementation(libs.kotlin.stdlib)
                 // Add KMP dependencies here
+                implementation(libs.androidx.room.runtime)
+                implementation(libs.androidx.sqlite.bundled)
             }
         }
 
@@ -68,6 +71,7 @@ kotlin {
                 // Add Android-specific dependencies here. Note that this source set depends on
                 // commonMain by default and will correctly pull the Android artifacts of any KMP
                 // dependencies declared in commonMain.
+                implementation(libs.androidx.room.sqlite.wrapper)
             }
         }
 
@@ -83,7 +87,16 @@ kotlin {
     }
 }
 
-// <module directory>/build.gradle.kts
+dependencies {
+    add("kspAndroid", libs.androidx.room.compiler)
+    add("kspIosSimulatorArm64", libs.androidx.room.compiler)
+    add("kspIosArm64", libs.androidx.room.compiler)
+    add("kspJvm", libs.androidx.room.compiler)
+}
+
+room {
+    schemaDirectory("$projectDir/schemas/syncox")
+}
 
 mavenPublishing {
     publishToMavenCentral()
