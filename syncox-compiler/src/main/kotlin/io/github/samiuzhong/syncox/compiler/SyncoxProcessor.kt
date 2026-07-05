@@ -54,7 +54,7 @@ class SyncoxProcessor(
                 annotation.arguments.firstOrNull { it.name?.asString() == "action" }
             val actionType = actionArgument?.value?.toString() ?: continue
 
-            val packageName = function.packageName.toString()
+            val packageName = function.packageName.asString()
             val functionName = function.simpleName.asString()
 
             routes.add(RouteInfo(actionType, packageName, functionName))

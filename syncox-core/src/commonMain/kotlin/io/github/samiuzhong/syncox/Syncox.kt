@@ -38,7 +38,7 @@ object Syncox {
      */
     suspend fun enqueue(action: SyncoxAction) {
         val currentEngine =
-            engine ?: throw IllegalStateException("Syncox 尚未初始化！请先调用 Syncox.initialize()")
+            engine ?: throw IllegalStateException("[Syncox] ❌ 尚未初始化！请先调用 Syncox.initialize()")
         currentEngine.enqueue(action)
     }
 
