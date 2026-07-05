@@ -22,6 +22,7 @@ import syncox.shared.generated.resources.compose_multiplatform
 @Composable
 @Preview
 fun App() {
+
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
         Column(

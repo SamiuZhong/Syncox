@@ -26,7 +26,7 @@ interface MutationDao {
     )
     suspend fun getPendingMutations(
         currentTimeMs: Long,
-        limit: Int = 50,
+        limit: Int,
     ): List<MutationRecordEntity>
 
     /**

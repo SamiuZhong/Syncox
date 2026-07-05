@@ -107,7 +107,7 @@ mavenPublishing {
 
     pom {
         name = "Syncox"
-        description = "A resilient offline synchronization engine for Kotlin Multiplatform and Android Compose, guaranteeing data consistency during network failures."
+        description = "A resilient offline synchronization engine for Kotlin Multiplatform and Android, guaranteeing data consistency during network failures."
         inceptionYear = "2026"
         url = "https://github.com/SamiuZhong/Syncox"
         licenses {

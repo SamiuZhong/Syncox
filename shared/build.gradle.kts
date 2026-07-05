@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.androidMultiplatformLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.googleDevtoolsKsp)
 }
 
 kotlin {
@@ -20,6 +21,8 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "Shared"
             isStatic = true
+
+            export(project(":syncox-core"))
         }
     }
 
@@ -53,6 +56,8 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
         }
         commonMain.dependencies {
+            api(project(":syncox-core"))
+
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
             implementation(libs.compose.material3)
@@ -67,4 +72,8 @@ kotlin {
 
 dependencies {
     androidRuntimeClasspath(libs.compose.uiTooling)
+    add("kspAndroid", project(":syncox-compiler"))
+    add("kspIosSimulatorArm64", project(":syncox-compiler"))
+    add("kspIosArm64", project(":syncox-compiler"))
+    add("kspJvm", project(":syncox-compiler"))
 }
