@@ -59,7 +59,6 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation(libs.kotlin.stdlib)
                 // Add KMP dependencies here
                 implementation(libs.androidx.room.runtime)
                 implementation(libs.androidx.sqlite.bundled)
