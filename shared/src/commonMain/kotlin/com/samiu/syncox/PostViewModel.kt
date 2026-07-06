@@ -49,7 +49,6 @@ class PostViewModel(
 
     @OptIn(FormatStringsInDatetimeFormats::class)
     private fun addLog(msg: String) {
-//        val time = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
         val time =
             LocalDateTime.Format { byUnicodePattern("HH:mm:ss") }.format(
                 Clock.System.now().toLocalDateTime(TimeZone.of("Asia/Shanghai")),
