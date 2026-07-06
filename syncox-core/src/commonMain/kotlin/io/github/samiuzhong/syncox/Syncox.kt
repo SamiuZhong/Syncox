@@ -17,7 +17,7 @@ object Syncox {
     internal fun initInternal(
         database: SyncoxDatabase,
         networkHandler: SyncoxNetworkHandler,
-        config: SyncoxConfig,
+        config: SyncoxConfig = SyncoxConfig(),
     ) {
         if (engine != null) return
         engine =
@@ -38,7 +38,8 @@ object Syncox {
      */
     suspend fun enqueue(action: SyncoxAction) {
         val currentEngine =
-            engine ?: throw IllegalStateException("[Syncox] ❌ 尚未初始化！请先调用 Syncox.initialize()")
+            engine
+                ?: throw IllegalStateException("[Syncox] ❌ 尚未初始化！请先调用 Syncox.initialize()")
         currentEngine.enqueue(action)
     }
 

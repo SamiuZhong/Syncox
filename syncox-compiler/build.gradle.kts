@@ -24,7 +24,7 @@ mavenPublishing {
 
     signAllPublications()
 
-    coordinates("io.github.samiuzhong", "syncox-compiler", "0.1.0")
+    coordinates("io.github.samiuzhong", "syncox-compiler", "1.0.0")
 
     pom {
         name = "Syncox"

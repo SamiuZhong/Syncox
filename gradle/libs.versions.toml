@@ -12,10 +12,12 @@ composeMultiplatform = "1.11.1"
 kotlinx-coroutines = "1.11.0"
 material3 = "1.11.0-alpha07"
 serialization = "1.11.0"
+kotlinxDatetime = "0.8.0"
 materialIcons = "1.7.3"
 ktor = "3.5.1"
 room = "2.8.4"
 sqlite = "2.7.0"
+syncox = "0.1.0"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
@@ -31,6 +33,7 @@ compose-uiToolingPreview = { module = "org.jetbrains.compose.ui:ui-tooling-previ
 kotlinx-coroutinesSwing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
 jb-material-icons = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "materialIcons" }
 kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
 androidx-sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
@@ -40,6 +43,8 @@ ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor" }
 ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+syncox-core = { module = "io.github.samiuzhong:syncox-core", version.ref = "syncox" }
+syncox-compiler = { module = "io.github.samiuzhong:syncox-compiler", version.ref = "syncox" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

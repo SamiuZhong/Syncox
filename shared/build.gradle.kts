@@ -24,6 +24,7 @@ kotlin {
             isStatic = true
 
             export(project(":syncox-core"))
+//            export(libs.syncox.core)
         }
     }
 
@@ -45,7 +46,7 @@ kotlin {
                 .toInt()
 
         compilerOptions {
-            jvmTarget = JvmTarget.JVM_25
+            jvmTarget = JvmTarget.JVM_17
         }
         androidResources {
             enable = true
@@ -65,6 +66,7 @@ kotlin {
         }
         commonMain.dependencies {
             api(project(":syncox-core"))
+//            api(libs.syncox.core)
 
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
@@ -75,6 +77,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
 
+            implementation(libs.kotlinx.datetime)
             implementation(libs.kotlinx.serialization)
             implementation(libs.jb.material.icons)
             implementation(libs.ktor.client.core)
@@ -89,4 +92,9 @@ dependencies {
     add("kspIosSimulatorArm64", project(":syncox-compiler"))
     add("kspIosArm64", project(":syncox-compiler"))
     add("kspJvm", project(":syncox-compiler"))
+
+//    add("kspAndroid", libs.syncox.compiler)
+//    add("kspIosSimulatorArm64", libs.syncox.compiler)
+//    add("kspIosArm64", libs.syncox.compiler)
+//    add("kspJvm", libs.syncox.compiler)
 }

@@ -6,6 +6,10 @@ import io.github.samiuzhong.syncox.Syncox
 import io.github.samiuzhong.syncox.autoRouter
 import io.github.samiuzhong.syncox.initialize
 
+/**
+ * @author samiu 2026/7/5
+ * @email samiuzhong@foxmail.com
+ */
 fun main() =
     application {
         Syncox.initialize(Syncox.autoRouter)

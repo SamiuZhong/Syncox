@@ -6,10 +6,7 @@ import io.github.samiuzhong.syncox.db.getRoomDatabase
  * @author samiu 2026/7/5
  * @email samiuzhong@foxmail.com
  */
-fun Syncox.initialize(
-    networkHandler: SyncoxNetworkHandler,
-    config: SyncoxConfig = SyncoxConfig(),
-) {
+fun Syncox.initialize(networkHandler: SyncoxNetworkHandler) {
     val db = getRoomDatabase(getDatabaseBuilder())
-    initInternal(db, networkHandler, config)
+    initInternal(db, networkHandler)
 }
