@@ -74,13 +74,6 @@ fun SyncoxScreen(
         modifier = modifier.padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text(
-            "MVVM + Syncox 实战演示",
-            style = MaterialTheme.typography.headlineMedium,
-            fontWeight = FontWeight.Bold,
-        )
-        Spacer(modifier = Modifier.height(16.dp))
-
         // --- 操作指南 ---
         Card(
             modifier = Modifier.fillMaxWidth(),
