@@ -63,24 +63,24 @@ kotlin {
             baseName = "Shared"
             isStatic = true
             // 暴露核心库给 Swift 可见
-            export("io.github.samiuzhong:syncox-core:0.1.0")
+            export("io.github.samiuzhong:syncox-core:1.0.0")
         }
     }
     
     sourceSets {
         commonMain.dependencies {
             // 引入核心库
-            api("io.github.samiuzhong:syncox-core:0.1.0")
+            api("io.github.samiuzhong:syncox-core:1.0.0")
         }
     }
 }
 
 dependencies {
     // 由于 iOS 和 Android 在 KMP 中的编译目标不同，必须为所有编译目标注入 KSP 依赖！
-    add("kspAndroid", "io.github.samiuzhong:syncox-compiler:0.1.0")
-    add("kspIosArm64", "io.github.samiuzhong:syncox-compiler:0.1.0")
-    add("kspIosSimulatorArm64", "io.github.samiuzhong:syncox-compiler:0.1.0")
-    add("kspIosX64", "io.github.samiuzhong:syncox-compiler:0.1.0")
+    add("kspAndroid", "io.github.samiuzhong:syncox-compiler:1.0.0")
+    add("kspIosArm64", "io.github.samiuzhong:syncox-compiler:1.0.0")
+    add("kspIosSimulatorArm64", "io.github.samiuzhong:syncox-compiler:1.0.0")
+    add("kspIosX64", "io.github.samiuzhong:syncox-compiler:1.0.0")
 }
 ```
 
